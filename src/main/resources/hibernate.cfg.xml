@@ -1,0 +1,28 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- JDBC connection settings -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">
+            jdbc:mysql://localhost:3306/minishop_db?useSSL=false&amp;allowPublicKeyRetrieval=true
+        </property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>
+
+        <!-- Hibernate settings -->
+        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <property name="show_sql">true</property>
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- Mappings -->
+        <mapping class="org.nmj.model.Category"/>
+        <mapping class="org.nmj.model.Product"/>
+        <mapping class="org.nmj.model.User"/>
+        <mapping class="org.nmj.model.ShoppingCart"/>
+        <mapping class="org.nmj.model.OrderHistory"/>
+
+    </session-factory>
+</hibernate-configuration>
